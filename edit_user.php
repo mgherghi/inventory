@@ -4,6 +4,9 @@
   // Checkin What level user has permission to view this page
    page_require_level(1);
 ?>
+
+<!--     *************************     -->
+
 <?php
   $e_user = find_by_id('users',(int)$_GET['id']);
   $groups  = find_all('user_groups');
@@ -12,6 +15,8 @@
     redirect('users.php');
   }
 ?>
+
+<!--     *************************     -->
 
 <?php
 //Update User basic info
@@ -39,6 +44,10 @@
     }
   }
 ?>
+
+<!--     *************************     -->
+
+
 <?php
 // Update user password
 if(isset($_POST['update-pass'])) {
@@ -64,27 +73,41 @@ if(isset($_POST['update-pass'])) {
 }
 
 ?>
+
+<!--     *************************     -->
+
+
 <?php include_once('layouts/header.php'); ?>
  <div class="row">
    <div class="col-md-12"> <?php echo display_msg($msg); ?> </div>
+
+<!--     *************************     -->
+
   <div class="col-md-6">
      <div class="panel panel-default">
+<!--     *************************     -->
        <div class="panel-heading">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
           Update <?php echo remove_junk(ucwords($e_user['name'])); ?> Account
         </strong>
        </div>
+<!--     *************************     -->
+
        <div class="panel-body">
+
           <form method="post" action="edit_user.php?id=<?php echo (int)$e_user['id'];?>" class="clearfix">
+<!--     *************************     -->
             <div class="form-group">
                   <label for="name" class="control-label">Name</label>
                   <input type="name" class="form-control" name="name" value="<?php echo remove_junk(ucwords($e_user['name'])); ?>">
             </div>
+<!--     *************************     -->
             <div class="form-group">
                   <label for="username" class="control-label">Username</label>
                   <input type="text" class="form-control" name="username" value="<?php echo remove_junk(ucwords($e_user['username'])); ?>">
             </div>
+<!--     *************************     -->
             <div class="form-group">
               <label for="level">User Role</label>
                 <select class="form-control" name="level">
@@ -93,6 +116,7 @@ if(isset($_POST['update-pass'])) {
                 <?php endforeach;?>
                 </select>
             </div>
+<!--     *************************     -->
             <div class="form-group">
               <label for="status">Status</label>
                 <select class="form-control" name="status">
@@ -100,6 +124,7 @@ if(isset($_POST['update-pass'])) {
                   <option <?php if($e_user['status'] === '0') echo 'selected="selected"';?> value="0">Deactive</option>
                 </select>
             </div>
+<!--     *************************     -->
             <div class="form-group clearfix">
                     <button type="submit" name="update" class="btn btn-info">Update</button>
             </div>
@@ -107,7 +132,10 @@ if(isset($_POST['update-pass'])) {
        </div>
      </div>
   </div>
+
+
   <!-- Change password form -->
+
   <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -129,6 +157,8 @@ if(isset($_POST['update-pass'])) {
       </div>
     </div>
   </div>
+
+<!--     *************************     -->
 
  </div>
 <?php include_once('layouts/footer.php'); ?>

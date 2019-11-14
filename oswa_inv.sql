@@ -55,6 +55,11 @@ CREATE TABLE IF NOT EXISTS `log` (
   `date` date NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=505 DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `log`
+--
+
+INSERT INTO `log` (`id`, `user_id`, `remote_ip`, `action`, `date`) VALUES
 
 -- --------------------------------------------------------
 

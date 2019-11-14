@@ -87,7 +87,7 @@ $results = '';
           <tr>
               <th>Date</th>
               <th>Product Title</th>
-              <th>Buying Price</th>
+              <th>cost Price</th>
               <th>Selling Price</th>
               <th>Total Qty</th>
               <th>TOTAL</th>
