@@ -21,4 +21,10 @@ require_once(LIB_PATH_INC.'upload.php');
 require_once(LIB_PATH_INC.'database.php');
 require_once(LIB_PATH_INC.'sql.php');
 
+$user_id = $_SESSION['user_id'];
+$remote_ip = $_SERVER['REMOTE_ADDR'];
+$action = $_SERVER['REQUEST_URI'];
+$action = preg_replace('/^.+[\\\\\\/]/', '', $action);
+logAction( $user_id, $remote_ip, $action);
+
 ?>

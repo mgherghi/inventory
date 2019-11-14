@@ -70,7 +70,7 @@ function redirect($url, $permanent = false)
     exit();
 }
 /*--------------------------------------------------------------*/
-/* Function for find out total saleing price, buying price and profit
+/* Function for find out total sale price, cost price and profit
 /*--------------------------------------------------------------*/
 function total_price($totals){
    $sum = 0;
@@ -87,7 +87,8 @@ function total_price($totals){
 /*--------------------------------------------------------------*/
 function read_date($str){
      if($str)
-      return date('F j, Y, g:i:s a', strtotime($str));
+//      return date('F j, Y, g:i:s a', strtotime($str));
+      return date('M j, Y, g:i:s a', strtotime($str));
      else
       return null;
   }
