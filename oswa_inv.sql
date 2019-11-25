@@ -32,18 +32,6 @@ CREATE TABLE IF NOT EXISTS `categories` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `categories`
---
-
-INSERT INTO `categories` (`id`, `name`) VALUES
-(1, 'Electronics'),
-(6, 'Plants'),
-(5, 'Power'),
-(4, 'Sensors');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `log`
 --
 
@@ -55,13 +43,6 @@ CREATE TABLE IF NOT EXISTS `log` (
   `date` date NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=505 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `log`
---
-
-INSERT INTO `log` (`id`, `user_id`, `remote_ip`, `action`, `date`) VALUES
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `media`
@@ -73,32 +54,6 @@ CREATE TABLE IF NOT EXISTS `media` (
   `file_type` varchar(100) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `media`
---
-
-INSERT INTO `media` (`id`, `file_name`, `file_type`) VALUES
-(1, 'nano.jpg', 'image/jpeg'),
-(2, 'pi3.jpg', 'image/jpeg'),
-(3, 'light_intensity.jpg', 'image/jpeg'),
-(4, 'batterycase.jpg', 'image/jpeg'),
-(5, 'batterycharger.jpg', 'image/jpeg'),
-(6, 'batterypack.jpg', 'image/jpeg'),
-(7, 'DHT.jpg', 'image/jpeg'),
-(8, 'nano_expansion.jpg', 'image/jpeg'),
-(9, 'wire_female_long.jpg', 'image/jpeg'),
-(10, 'digitmatrix.jpg', 'image/jpeg'),
-(11, 'EC.jpg', 'image/jpeg'),
-(12, 'PIR.jpg', 'image/jpeg'),
-(13, 'temp_probe.jpg', 'image/jpeg'),
-(14, 'enclosure.jpg', 'image/jpeg'),
-(15, 's-l140(3).jpg', 'image/jpeg'),
-(16, 'wire_female.jpg', 'image/jpeg'),
-(17, 'No_image_available.png', 'image/png'),
-(18, 'no-image.png', 'image/png'),
-(20, 'pothos.jpg', 'image/jpeg');
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `orders`
@@ -111,16 +66,6 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `paymethod` varchar(10) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`id`, `customer`, `notes`, `paymethod`, `date`) VALUES
-(106, 'Gotham City PD', 'Account #5551212', 'Charge', '2019-02-05'),
-(107, 'Harry Potter', 'Paid over the phone', 'Check', '2019-02-06');
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `products`
@@ -139,16 +84,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `date` datetime NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `products`
---
 
-INSERT INTO `products` (`id`, `name`, `description`, `location`, `quantity`, `buy_price`, `sale_price`, `category_id`, `media_id`, `date`) VALUES
-(9, 'Pothos Plant', 'Epipremnum aureum is a species of flowering plant in the family of Araceae, native in Mo''orea[citation needed]. The species is a popular houseplant in temperate regions, but has also become naturalised in[citation needed] tropical and sub-tropical forests worldwide, including northern Australia, Southeast Asia, South Asia, the Pacific Islands and the West Indies,[2][3] where it has caused severe ecological damage in some cases.  The plant has a multitude of common names including golden pothos, Ceylon creeper,[4] hunter''s robe, ivy arum, money plant, silver vine, Solomon Islands ivy and taro vine. It is also called devil''s vine or devil''s ivy because it is almost impossible to kill and it stays green even when kept in the dark.[5] It is sometimes mistakenly labeled as a Philodendron in plant stores. It is commonly known as money plant in many parts of the Indian subcontinent.[6][7] It rarely flowers without artificial hormone supplements;[8] the last known spontaneous flowering was reported in 1964.[9]', 'Garage', '4', 5.00, 10.00, 6, 20, '2019-02-11 11:01:44');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `sales`
 --
 
@@ -161,15 +97,6 @@ CREATE TABLE IF NOT EXISTS `sales` (
   `date` date NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `sales`
---
-
-INSERT INTO `sales` (`id`, `order_id`, `product_id`, `qty`, `price`, `date`) VALUES
-(39, 107, 9, 2, 20.00, '2019-02-11'),
-(40, 106, 9, 4, 40.00, '2019-02-11');
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `stock`
@@ -182,15 +109,6 @@ CREATE TABLE IF NOT EXISTS `stock` (
   `comments` text NOT NULL,
   `date` datetime NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `stock`
---
-
-INSERT INTO `stock` (`id`, `product_id`, `quantity`, `comments`, `date`) VALUES
-(1, 9, '10', 'initial stock', '2019-02-11 11:01:44');
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `users`
@@ -304,37 +222,37 @@ ALTER TABLE `user_groups`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `log`
 --
 ALTER TABLE `log`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=505;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `media`
 --
 ALTER TABLE `media`
-MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=108;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `sales`
 --
 ALTER TABLE `sales`
-MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=41;
+MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `stock`
 --
 ALTER TABLE `stock`
-MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users`
 --
