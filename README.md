@@ -1,7 +1,7 @@
 # inventory
 inventory management system with sales and orders
 # documentation
-https://hydromazing.com/2019/02/07/using-a-raspberry-pi-for-your-own-inventory-management-system/
+https://coreconduit.com/2019/02/07/using-a-raspberry-pi-for-your-own-inventory-management-system/
 ****
 Modified by Cory J. Potter aka CoreConduit Consulting Services 2018 - 2019
 ****
@@ -13,4 +13,4 @@ Original Download version with git (`git clone https://github.com/siamon123/ware
    **Password** : admin | **Password** : special | **Password** : user
 
 # support
-Contact Cory:  https://hydromazing.com/about/
+Contact Cory:  https://coreconduit.com/about/
